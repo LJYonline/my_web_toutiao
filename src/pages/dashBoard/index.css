@@ -1,0 +1,487 @@
+.gutter-example {
+  background: white;
+  float: left;
+}
+.gutter-row {
+  background: white;
+
+}
+.gutter-box {
+  background: aqua;
+}
+
+.normal {
+  font-family: Georgia, sans-serif;
+  text-align: center;
+  height: 7584px;
+  width: 1905px;
+}
+
+.title {
+  height: 34px;
+  width: 1905px;
+  background: #080808;
+  color: white;
+  margin: 0;
+}
+
+.container {
+  box-sizing: border-box;
+  background:  white;
+  line-height: 18px;
+  height: 7534px;
+  width: 1170px;
+  margin: 0 auto;
+
+
+}
+.menu {
+  background: white;
+  width: 110px;
+  height: 588px;
+  list-style-type: none;
+  list-style-position: initial;
+  list-style-image: initial;
+  font-family: PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,Helvetica Neue,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #657180;
+}
+.logo {
+  display: block;
+  width: 110px;
+  height: 28px;
+  margin-bottom: 16px;
+}
+.toutiao2 {
+  width: 108px;
+  height: 27px;
+  margin: 0 auto
+}
+.ul {
+  display: block;
+  list-style-position: initial;
+  list-style-image: initial;
+  padding-left: 0px;
+}
+.Item {
+  float: left;
+  color:black;
+  display: block;
+  width: 110px;
+  height: 40px;
+  margin-bottom: 2px;
+  text-align: center;
+  border-radius:5px;
+}
+.Itemfirst {
+  font-size: 16px;
+  list-style: none;
+  color:black;
+  backgroundColor:#ed4040;
+  display: block;
+  width: 110px;
+  height: 40px;
+  margin-bottom: 2px;
+  text-align: center;
+  margin-bottom: 2px;
+
+}
+.moreli {
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  left: 110px;
+  width: 220px;
+  z-index: 30;
+  background-color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.12);
+  padding: 5px;
+}
+
+.moreul {
+  display:inline-block;
+  padding-left: 0px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.Itemli {
+
+  float: left;
+  display:inline;
+  color:black;
+  list-style: none;
+  width: 110px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius:5px;
+  margin-bottom: 2px;
+}
+.Itemto {
+  position: relative;
+  float: left;
+  color:black;
+  display: block;
+  width: 110px;
+  height: 40px;
+  margin-bottom: 2px;
+  text-align: center;
+  border-radius:5px;
+  font-size: 16px;
+}
+
+.Itemto:hover .moreli{
+  display: block;
+}
+.Itemto span{
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+}
+.Item span{
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+.Item:hover{
+  color:#FFF;
+  background:#ed4040;
+}
+.Itemli:hover{
+  color:#FFF;
+  background:#ed4040;
+}
+
+.menu_background{
+  background: #ed4040;
+}
+.dashboard {
+  width: 1060px;
+  height: 7534px;
+  background:#ed4040;
+}
+.left {
+  background: white;
+  float: left;
+  margin-right: 30px;
+  margin-top: 18px;
+}
+.center {
+  float: left;
+  background: antiquewhite;
+  line-height: 18px;
+  width: 660px;
+  height: 9723px;
+
+  margin-top: 18px;
+}
+
+.ugcBox {
+  margin-bottom: 6px;
+}
+.ugcBox_inner {
+  position: relative;
+  border: 1px solid #e8e8e8;
+  width: 100%;
+}
+.ugc_tab_list {
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  zoom: 1;
+  height: 44px;
+  border-bottom: 1px solid #e8e8e8;
+  list-style: none;
+}
+.ugc_tab_item {
+  margin-left: 19px;
+  font-size: 15px;
+  color: #222;
+  line-height: 42px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  float: left;
+}
+
+.ugc_box {
+  box-sizing: border-box;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+.word_number {
+  position: absolute;
+  z-index: 3;
+  bottom: 50px;
+  right: 10px;
+  display: inline-block;
+  background-color: rgba(0,0,0,.5);
+  border-radius: 50px;
+  padding: 0 8px;
+  color: #fff;
+}
+
+.upload_footer {
+  border-top: 1px solid #e8e8e8;
+  height: 40px;
+}
+.bui_left {
+  margin: 0;
+  padding: 0;
+  float: left;
+  box-sizing: border-box;
+}
+
+.bui_right {
+  float: right;
+  box-sizing: border-box;
+}
+.upload_publish {
+  display: inline-block;
+  width:120px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  background-color: #f85959;
+  opacity:.6;
+  }
+
+
+.show_upload {
+  color: #222;
+  font-size: 14px;
+  line-height: 39px;
+  display: inline-block;
+  vertical-align:middle;
+  margin: 0px 0px 0px 20px;
+}
+span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.upload_icon {
+  width: 20px;
+  height: 21px;
+  margin-right: 5px;
+  vertical-align: middle;
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+
+.checkbox_wrap {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+  color: #999;
+  font-size: 14px;
+  cursor: pointer;
+}
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  display: inline-block;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.show_emoji {
+  display: inline-block;
+  height: 39px;
+  margin-left: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 9px;
+}
+
+
+.title_input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100px;
+  display: block;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 13px 19px;
+  border: 0;
+  outline: 0;
+  resize: none;
+  background-color: #f4f5f6;
+  transition: all .5s;
+  animation-duration: .8s;
+  animation-fill-mode: both;
+}
+.right {
+  display: block;
+  background: white;
+  line-height: 18px;
+  float: right;
+  width: 340px;
+  height:3389px;
+}
+.input {
+  border:1px;
+  box-sizing: border-box;
+  margin-top: 18px;
+  background: #e8e8e8;
+  line-height: 18px;
+  margin-bottom: 16px;
+  display: inline-table;
+}
+.input_inner:hover {
+
+  border:1px solid #208eda;
+}
+.input_inner {
+  padding: 3px 10px;
+  background-color: #f5f6f7;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+  color: #1f2d3d;
+  display: block;
+  font-size: inherit;
+  height: 44px;
+  outline: 0;
+  padding: 3px 10px;
+  width: 262px;
+  overflow: visible;
+  background-image: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.input_inner_group {
+  display: table-cell;
+  border: 1px solid #208eda;
+  background-color: #208eda;
+  color: #fff;
+  position: relative;
+  left: -1px;
+  padding: 0 18px;
+  font-size: 14px;
+
+}
+.input_inner_button {
+  color: #fff;
+  width: 60px;
+  height: 34px;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #208eda;
+  border: 1px solid #208eda;
+  text-align: center;
+  box-sizing: border-box;
+  outline: 0;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  margin: -10px;
+}
+.card {
+  width: 340px;
+  height:236px;
+  float: right;
+}
+.rightcard {
+  box-sizing: border-box;
+  width: 340px;
+  height: 236px;
+  padding: 20px;
+  background: #f4f5f6;
+}
+.rightcardin {
+  box-sizing: border-box;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  letter-spacing: 0;
+}
+.logininner {
+  box-sizing: border-box;
+  height: 196px;
+  border: 1px  #e8e8e8;
+  padding-top: 20px;
+  padding-right: 28px;
+  padding-bottom: 15px;
+  padding-left: 28px;
+}
+.logininner-msg {
+  font-size: 12px;
+  color: #777;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.login-button {
+  width: 240px;
+  height: 40px;
+  margin-top: 16px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  background: #ed4040;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.third-login {
+  width: 242px;
+  height: 62px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  padding-inline-start: 0px;
+}
+.sns_qq
+{
+  display: inline-block;
+  position: relative;
+  width: 36px;
+  height: 58px;
+  cursor: pointer;
+  margin-right: 24px;
+  background-repeat: no-repeat;
+  background-size: 100% 36px;
+  background-image: url(//s3.pstatp.com/toutiao/static/img/icon_qq_pc.5baa07b.svg),none;
+}
+
+.sns_weixin
+{
+  display: inline-block;
+  position: relative;
+  width: 36px;
+  height: 58px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: 100% 36px;
+  background-image: url(//s3.pstatp.com/toutiao/static/img/icon_weixin_pc.1d58bef.png),none;
+}
+.Span {
+  position: absolute;
+  left: 6px;
+  top: 41px;
+  width: 24px;
+  font-size: 12px;
+  line-height: 17px;
+  color: #777;
+
+}
+
+
+
+
