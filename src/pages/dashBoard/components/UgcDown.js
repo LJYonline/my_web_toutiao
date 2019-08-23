@@ -1,0 +1,75 @@
+import React, { Component } from 'react'
+import styles from '../index.css'
+class UgcDown extends Component {
+    contentClick(e){
+        switch(e){
+        case "其他":return styles.tag_style_video1;
+        case "动漫":return styles.tag_style_video2;
+        default :return styles.tag_style_video;
+        }
+     }
+    
+    render() {
+         
+        return (
+            <div className={styles.ugcDown}>
+                <ul className={styles.ugcDown}>
+                    {/* <li>
+                        <div className={styles.no_mode}>
+                            
+                            <div className={styles.title_box}>
+                                <a href="https://www.xuexi.cn/" target="_blank" className={styles.link}>{this.props.item.title}</a>
+                            </div >
+                            <a rel="noopener noopener" target="_blank" herf="https://www.xuexi.cn" className={styles.xuexi}></a>
+                            <div className={styles.foot_bar}>
+                                <div className={styles.foot_bar_left}>
+
+                                    <a herf="video" target="_blank" className={styles.tag_style_video}>{this.props.item.chinese_tag}</a>
+                                    <a className={styles.footer_bar_action}>
+                                        <img className={styles.footer_bar_img} src={this.props.item.media_avatar_url} lazy="loaded" />
+                                    </a>
+                                    <a herf="" target="_blank" className={styles.footer_bar_action + "" + styles.footer_bar_size}> {this.props.item.source} ·</a>
+                                    <a herf={this.props.item.source_url} className={styles.footer_bar_action + "" + styles.footer_bar_size}> 1083评论 ·</a>
+                                    <a className={styles.footer_bar_action + "" + styles.footer_bar_size}> 1小时前</a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </li> */}
+                    <li>
+                        <div className={styles.single_mode}>
+                            <div className={styles.single_mode_lbox}>
+                                <a href="/group/6728168461891011079/" target="_blank" className={styles.img_wrap}>
+                                    <img className={styles.lazy_load_img} src={this.props.item.image_url} lazy="loaded" />
+                                </a>
+                            </div>
+                            <div className={styles.single_mode_rbox}>
+                                <div className={styles.single_mode_rbox_inner}>
+                                    <div className={styles.title_box}>
+                                        <a href="https://www.xuexi.cn/" target="_blank" className={styles.link}>{this.props.item.title}</a>
+                                    </div >
+                                    <div className={styles.foot_bar}>
+                                        <div className={styles.foot_bar_left}>
+                                        styles.tag_style_video}
+                                            <a herf="video" target="_blank" className={this.contentClick.call(this,this.props.item.chinese_tag)}>{this.props.item.chinese_tag}</a>
+                                            <a className={styles.footer_bar_action}>
+                                                <img className={styles.footer_bar_img} src={this.props.item.media_avatar_url} lazy="loaded" />
+                                            </a>
+                                            <a herf="" target="_blank" className={styles.footer_bar_action + "" + styles.footer_bar_size}> {this.props.item.source} ·</a>
+                                            <a className={styles.footer_bar_action + "" + styles.footer_bar_size}> 1083评论 ·</a>
+                                            <a className={styles.footer_bar_action + "" + styles.footer_bar_size}> 1小时前</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div >
+                        </div>
+                    </li>
+                    <li> </li>
+                </ul>
+            </div>
+          
+        )
+    }
+}
+export default UgcDown
