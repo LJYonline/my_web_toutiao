@@ -1,79 +1,79 @@
-import React, { Component } from 'react'
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { Component } from 'react';
 import styles from './index.css';
 import Img from '../.././assets/toutiao.png';
-import img from '../.././assets/icon.png'
-import List from './components/List'
-import Content from './components/Content'
-import { getData } from '.././api/index'
-import axios from 'axios'
+
+import List from './components/List';
+import Content from './components/Content';
+import axios from 'axios';
 import UgcDown from './components/UgcDown';
+import { connect } from 'dva';
 
-class dashBoard extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      list: ["发布图文", "发布视频", "发布问答"],
-      content: [
-        { tex: "有什么新鲜事想告诉大家", num: "0/2000", img: img , upload: "添加图片", push: "发布长文" },
-        { tex: "视频标题（30 字以内）", num: "0/30", img: img, upload: "添加视频", push: "" },
-        { tex: "请输入问题标题（4-40字）", num: "0/40", img:img, upload: "添加图片", push: "更多回答" }
-      ],
-      k: 0,
-      ugcDown:[0,2,4,6,8,10],
-      service:[
-        //{title:"",chinese_tag:"",source:"",image_url:"",middle_image:""}
-        ]
-    };
-    //this.onChange = this.onChange.bind(this)
-  }
+// export default connect(({ app }) => ({
+//   app,
+// }))(dashBoard);
 
-  // 初始化的时候选中第一个
+@connect(({ app }) => ({
+  app
+}))
+
+class dashBoard extends Component{
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     list: ["发布图文", "发布视频", "发布问答"],
+  //     content: [
+  //       { tex: "有什么新鲜事想告诉大家", num: "0/2000", img:img  , upload: "添加图片", push: "发布长文" },
+  //       { tex: "视频标题（30 字以内）", num: "0/30", img: img, upload: "添加视频", push: "" },
+  //       { tex: "请输入问题标题（4-40字）", num: "0/40", img:img, upload: "添加图片", push: "更多回答" }
+  //     ],
+  //     k: 0,
+  //     service:[]
+  //   };   
+  // }
+ 
   componentDidMount() {
     this.setState({ k: 0 })
   }
   handleClick(e) {
     console.log(e)
-    this.setState({ k: e });
+    this.props.dispatch({
+        type:'app/updateState',
+        payload:{k:e}
+    });
   }
   currentClass(index) {
-    return this.state.k === index ? styles.current : '';
+    return this.props.app.k === index ? styles.current : '';
   }
   contentClass(index) {
-    return this.state.k === index ? styles.active : '';
+    return this.props.app.k === index ? styles.active : '';
   }
   oncheckbox(index) {
     console.log('=======')
-    return this.state.k == index ? 'ugc_tab_item' : ''
+    return this.props.app.k === index ? 'ugc_tab_item' : ''
   }
+  
+ 
 
-  //   componentDidMount () {
-  //     getData(params).then(res => {
-  //         console.log("开始请求")
-  //     })
-  // }
-  // // 结合 async
-  // async componentDidMount () {
-  //     let res = await getData(params)
-  // }
+  
 
-
+  // eslint-disable-next-line no-dupe-class-members
   componentDidMount(){
-
-    const _this=this
-   axios.get('/data.json')
+    const _this=this.props
+    axios.get('/data.json')
      .then(function (res) {
-       _this.setState({service:res.data})
+       _this.dispatch({type:'app/updateState',payload:{service:res.data}})
        console.log("==", res.data[0].title)
        console.log("成功了")
      })
      .catch(function (error) {
        console.log(error)
      })}
-
+     
  
   render() {
-   
-    console.log(this.state.service.title)
+     console.log("props",this.props)
+    const {list,content,k,service} =this.props.app
     return (
 
       <div className={styles.container}>
@@ -146,19 +146,19 @@ class dashBoard extends Component {
           <div className={styles.ugcBox}>
             <div className={styles.ugcBox_inner}>
               <ul className={styles.ugc_tab_list}>
-                {this.state.list.map((item, index) => {
+                {list.map((item, index) => {
                   return (<List currentClass={this.currentClass.bind(this)} handleClick={this.handleClick.bind(this)} item={item} index={index} key={index} />)
                 })
                 }
               </ul>
               <div className={styles.ugc_content}>
-                {this.state.content.map((item, index) => {
-                  return (<Content key={index} k={this.state.k} item={item} index={index} contentClass={this.contentClass.bind(this)} />)
+                {content.map((item, index) => {
+                  return (<Content key={index} k={k} item={item} index={index} contentClass={this.contentClass.bind(this)} />)
                 })}
               </div>
             </div>
           </div>
-            { this.state.service.map((item,index) => {
+            { service.map((item,index) => {
               return (<UgcDown  item={item} index={index} />)
             })}
         </div>
@@ -199,5 +199,7 @@ class dashBoard extends Component {
     )
   }
 }
-
 export default dashBoard
+// export default connect(({ app }) => ({
+//   app,
+// }))(dashBoard);

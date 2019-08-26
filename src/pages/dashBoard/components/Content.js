@@ -10,6 +10,7 @@ class Content extends Component {
         return  e== 0? styles.show_emoji:styles.active
      }
     render() {
+        console.log("+++++",this.props.item.img)
         return (
             // <div className={this.props.contentClass(this.props.index)} >{this.props.item}</div>
             // <div className="publish">
@@ -25,10 +26,9 @@ class Content extends Component {
                     <div className={styles.bui_left}>
                         <div className={styles.show_first}>
                             <span className={styles.show_upload}>
-                                <img src={this.props.item.img} className={styles.upload_icon} />
+                                <img src={this.props.item.img}  className={styles.upload_icon}/>
                                 <span>{this.props.item.upload}</span>
-                            </span>
-                            {/* <span className={styles.checkbox_wrap}> */}
+                            </span>                        
                             <span className={this.contentClick.call(this,this.props.k)}>
                                 <span className={styles.checkbox}>
                                     {/* <span class={this.oncheckbox.bind(this)} >
