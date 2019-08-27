@@ -4,13 +4,13 @@ import styles from '../index.css'
 class Content extends Component {
      contentClick(e){
         
-        return  e== 1? styles.active: styles.checkbox_wrap;
+        return  e === 1? styles.active: styles.checkbox_wrap;
      }
      contentEmoji(e){
-        return  e== 0? styles.show_emoji:styles.active
+        return  e === 0? styles.show_emoji:styles.active
      }
     render() {
-        console.log("+++++",this.props.item.img)
+    
         return (
             // <div className={this.props.contentClass(this.props.index)} >{this.props.item}</div>
             // <div className="publish">
@@ -19,14 +19,14 @@ class Content extends Component {
             //     <div className='btn3'></div>
             // </div>
             // call、apply、bind
-            <div className={this.props.contentClass(this.props.index)}  >
+            <div key={this.props.index} className={this.props.contentClass(this.props.index)}  >
                 <textarea placeholder={this.props.item.tex} className={styles.title_input}></textarea>
                 <p className={styles.word_number}>{this.props.item.num}字</p>
                 <div className={styles.upload_footer}>
                     <div className={styles.bui_left}>
                         <div className={styles.show_first}>
                             <span className={styles.show_upload}>
-                                <img src={this.props.item.img}  className={styles.upload_icon}/>
+                                <img src={this.props.item.img}  alt="" className={styles.upload_icon}/>
                                 <span>{this.props.item.upload}</span>
                             </span>                        
                             <span className={this.contentClick.call(this,this.props.k)}>
@@ -38,14 +38,14 @@ class Content extends Component {
                                 <span>{this.props.item.push}</span>  
                             </span>
                             <span className={this.contentEmoji.call(this,this.props.k)}>
-                                    <img src="http://p3.pstatp.com/origin/b76b00091cadfe239a6a" className={styles.icon} />
+                                    <img src="http://p3.pstatp.com/origin/b76b00091cadfe239a6a" alt="" className={styles.icon} />
                             </span>
 
 
                         </div>
                     </div>
                     <div className={styles.bui_right}>
-                            <a className={styles.upload_publish}>发布</a>
+                            <a className={styles.upload_publish} href="https://www.xuexi.cn/">发布</a>
                         </div>
                     
                 </div>

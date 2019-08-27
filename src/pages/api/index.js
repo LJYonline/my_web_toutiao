@@ -2,7 +2,7 @@
 // 引入 axios
 import axios from 'axios'
 // 做formData格式转换用的，当然您也可以使用encode自己处理
-import Qs from 'qs' 
+//import Qs from 'qs' 
 
 axios.defaults.headers['Content-Type'] = "application/x-www-form-urlencoded;charset=UTF-8"
 axios.defaults.baseURL = "" 

@@ -1,4 +1,5 @@
 import React ,{ Component } from 'react'
+import {  Route } from 'react-router-dom';
 import Redirect from 'umi/redirect'
 
 
@@ -6,7 +7,7 @@ import Redirect from 'umi/redirect'
 class Index extends Component{
 
   render() {
-    return <Redirect to={'/dashboard'} />
+    return <Redirect to='/DashBoard'/>
   }
 }
 export default Index

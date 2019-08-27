@@ -12,13 +12,13 @@ export default {
       title: 'my-app-toutiao',
       dll: false,
 
-      routes: {
-        path: '/',
-        component: '../layouts/index',
-        router: [
-          { path: '/dashBoard',component:'./dashBoard/index'},
-        ]
-      },
+      // routes: {
+      //   path: '/',
+      //   component: '../layouts/index',
+      //   router: [
+      //     { path: '/DashBoard',component:'./DashBoard/index.js'},
+      //   ]
+      // },
     }],
   ],
 }

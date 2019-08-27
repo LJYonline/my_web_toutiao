@@ -1,23 +1,22 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import styles from './index.css';
 import Img from '../.././assets/toutiao.png';
 
-import List from './components/List';
-import Content from './components/Content';
-import axios from 'axios';
-import UgcDown from './components/UgcDown';
+import List from './Components/List';
+import Content from './Components/Content';
+//import axios from 'axios';
+import UgcDown from './Components/UgcDown';
 import { connect } from 'dva';
 
 // export default connect(({ app }) => ({
 //   app,
-// }))(dashBoard);
+// }))(DashBoard);
 
 @connect(({ app }) => ({
   app
 }))
 
-class dashBoard extends Component{
+class DashBoard extends Component{
   // constructor(props) {
   //   super(props)
   //   this.state = {
@@ -32,9 +31,6 @@ class dashBoard extends Component{
   //   };   
   // }
  
-  componentDidMount() {
-    this.setState({ k: 0 })
-  }
   handleClick(e) {
     console.log(e)
     this.props.dispatch({
@@ -48,34 +44,27 @@ class dashBoard extends Component{
   contentClass(index) {
     return this.props.app.k === index ? styles.active : '';
   }
-  oncheckbox(index) {
-    console.log('=======')
-    return this.props.app.k === index ? 'ugc_tab_item' : ''
-  }
-  
- 
-
-  
-
   // eslint-disable-next-line no-dupe-class-members
+  // componentDidMount(){
+  //   const _this=this.props
+  //   axios.get('/data.json')
+  //    .then(function (res) {
+  //      _this.dispatch({type:'app/updateState',payload:{service:res.data}})
+  //      console.log("==", res.data[0].title)
+  //      console.log("成功了")
+  //    })
+  //    .catch(function (error) {
+  //      console.log(error)
+  //    })}
   componentDidMount(){
-    const _this=this.props
-    axios.get('/data.json')
-     .then(function (res) {
-       _this.dispatch({type:'app/updateState',payload:{service:res.data}})
-       console.log("==", res.data[0].title)
-       console.log("成功了")
+     this.props.dispatch({
+     type:'app/addNews'
      })
-     .catch(function (error) {
-       console.log(error)
-     })}
-     
- 
+  }
   render() {
      console.log("props",this.props)
     const {list,content,k,service} =this.props.app
     return (
-
       <div className={styles.container}>
         <div className={styles.left}>
           <div className={styles.menu}>
@@ -122,20 +111,20 @@ class dashBoard extends Component{
                 <span>搞笑</span>
               </li>
               <li key="sub13" className={styles.Itemto}>
-                <a className={styles.Item}><span>更多</span>
+                <a className={styles.Item} href="https://www.xuexi.cn/" ><span>更多</span>
                 </a>
                 <div className={styles.moreli}>
                   <ul className={styles.moreul}>
-                    <li className={styles.Itemli}><a>新闻1</a></li>
-                    <li className={styles.Itemli}><a>新闻2</a></li>
-                    <li className={styles.Itemli}><a>新闻3</a></li>
-                    <li className={styles.Itemli}><a>新闻4</a></li>
-                    <li className={styles.Itemli}><a>新闻5</a></li>
-                    <li className={styles.Itemli}><a>新闻1</a></li>
-                    <li className={styles.Itemli}><a>新闻2</a></li>
-                    <li className={styles.Itemli}><a>新闻3</a></li>
-                    <li className={styles.Itemli}><a>新闻4</a></li>
-                    <li className={styles.Itemli}><a>新闻5</a></li>
+                    <li className={styles.Itemli}><a href="/ch/news_military/" className={styles.Item}>新闻1</a></li>
+                    <li className={styles.Itemli}><a href="/ch/news_military/"className={styles.Item}>新闻2</a></li>
+                    <li className={styles.Itemli}><a href="/ch/news_military/" className={styles.Item}>新闻3</a></li>
+                    <li className={styles.Itemli}><a href="/ch/news_military/" className={styles.Item}>新闻4</a></li>
+                    <li className={styles.Itemli}><a href="/ch/news_military/" className={styles.Item}>新闻5</a></li>
+                    <li className={styles.Itemli}><a href="/ch/news_military/" className={styles.Item}>新闻1</a></li>
+                    <li className={styles.Itemli}><a href="/ch/news_military/" className={styles.Item}>新闻2</a></li>
+                    <li className={styles.Itemli}><a href="/ch/news_military/" className={styles.Item}>新闻3</a></li>
+                    <li className={styles.Itemli}><a href="/ch/news_military/" className={styles.Item}>新闻4</a></li>
+                    <li className={styles.Itemli}><a href="/ch/news_military/" className={styles.Item}>新闻5</a></li>
                   </ul>
                 </div>
               </li>
@@ -147,7 +136,7 @@ class dashBoard extends Component{
             <div className={styles.ugcBox_inner}>
               <ul className={styles.ugc_tab_list}>
                 {list.map((item, index) => {
-                  return (<List currentClass={this.currentClass.bind(this)} handleClick={this.handleClick.bind(this)} item={item} index={index} key={index} />)
+                  return (<List key={index} currentClass={this.currentClass.bind(this)} handleClick={this.handleClick.bind(this)} item={item} index={index}  />)
                 })
                 }
               </ul>
@@ -159,7 +148,7 @@ class dashBoard extends Component{
             </div>
           </div>
             { service.map((item,index) => {
-              return (<UgcDown  item={item} index={index} />)
+              return (<UgcDown  key={index} item={item} index={index} />)
             })}
         </div>
 
@@ -199,7 +188,5 @@ class dashBoard extends Component{
     )
   }
 }
-export default dashBoard
-// export default connect(({ app }) => ({
-//   app,
-// }))(dashBoard);
+export default DashBoard
+

@@ -1,6 +1,6 @@
 import React ,{ Component }from 'react'
 import styles from './index.css';
-import dashBoard from '.././pages/index';
+import DashBoard from '../pages/DashBoard';
 class BasicLayout extends Component {
 
   render() {
@@ -12,7 +12,7 @@ class BasicLayout extends Component {
         <div className={styles.title}>
           <div className={styles.topbar}>
             <div className={styles.topleft}>
-              <a href="//app.toutiao.com/news_article/" target="_blank" ga_event="mh_nav_others"
+              <a href="//app.toutiao.com/news_article/" target="_blank"  rel="noopener noreferrer" ga_event="mh_nav_others"
                  className={styles.downloadapp}>下载APP</a>
               <div className={styles.weathertool}>
                 <div>beiing</div>
@@ -27,8 +27,7 @@ class BasicLayout extends Component {
                  </li>
                  <li className={styles.li}>
                    <div className={styles.ttdropdown}>
-                     <a href="javascript:;"
-                        className={styles.downloadapp}>头条产品</a>
+                     <a href="//app.toutiao.com/news_article/" className={styles.downloadapp}>头条产品</a>
                    </div>
                  </li>
                </ul>
@@ -39,7 +38,7 @@ class BasicLayout extends Component {
           </div>
 
 
-        <dashBoard>{children}</dashBoard>
+        <DashBoard>{children}</DashBoard>
       </div>
     )
   }
